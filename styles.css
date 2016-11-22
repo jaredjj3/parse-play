@@ -75,10 +75,25 @@ input, textarea {
 nav { 
   display: flex;
   align-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   justify-content: space-between;
   border-bottom: 1px solid whitesmoke;
   background: rgb(25, 80, 150);
   background: linear-gradient(rgb(25, 80, 140), rgb(25, 80, 170));
+  z-index: 2;
+}
+
+.navigation-spacer {
+  display: block;
+  color: transparent;
+  height: 60px;
+}
+
+.navigation-container {
+  width: 100%;
 }
 
 .navigation-links {
