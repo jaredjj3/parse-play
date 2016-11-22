@@ -1,3 +1,5 @@
+/* RESET */
+
 ul, li, strong, main, button, i,
 html, body, header, nav, h1, a,
 section, img, div, h2, h3, p, form,
@@ -61,3 +63,42 @@ input, textarea {
   -webkit-border-radius: 0;
 }
 
+/* APPLICATION */
+
+.children-container {
+  background: rgb(25, 70, 100);
+}
+
+/* NAVIGATION */
+
+.navigation-container { 
+ display: flex;
+ align-content: center;
+ justify-content: space-between;
+ border-bottom: #aaa;
+ box-shadow: 0 0 3px #aaa;
+ background: white;
+}
+
+.navigation-links {
+  display: flex;
+  align-content: center;
+}
+
+.navigation-links > li {
+  margin: 15px;
+}
+
+.navigation-links > li:hover {
+  color: rgb(100, 200, 215);
+}
+
+.logo-container {
+  width: 125px;
+  margin: 15px;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}

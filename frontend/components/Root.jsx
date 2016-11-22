@@ -8,10 +8,16 @@ import UploadContainer from './upload/UploadContainer';
 import ProfileContainer from './profile/ProfileContainer';
 
 export default ({ store }) => {
+  const onEnter = (nextState, replace) => {
+    if (nextState.location.pathname === "/") {
+      replace('/home');
+    }
+  };
+
   return(
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path="/" component={App}>
+        <Route path="/" component={App} onEnter={onEnter}>
           <Route path="home" component={Home} />
           <Route path="upload" component={UploadContainer} />
           <Route path="profile" component={ProfileContainer} />

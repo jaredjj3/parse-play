@@ -22614,6 +22614,12 @@
 	exports.default = function (_ref) {
 	  var store = _ref.store;
 	
+	  var onEnter = function onEnter(nextState, replace) {
+	    if (nextState.location.pathname === "/") {
+	      replace('/home');
+	    }
+	  };
+	
 	  return _react2.default.createElement(
 	    _reactRedux.Provider,
 	    { store: store },
@@ -22622,7 +22628,7 @@
 	      { history: _reactRouter.hashHistory },
 	      _react2.default.createElement(
 	        _reactRouter.Route,
-	        { path: '/', component: _App2.default },
+	        { path: '/', component: _App2.default, onEnter: onEnter },
 	        _react2.default.createElement(_reactRouter.Route, { path: 'home', component: _Home2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: 'upload', component: _UploadContainer2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: 'profile', component: _ProfileContainer2.default })
@@ -28908,9 +28914,13 @@
 	  var children = _ref.children;
 	  return _react2.default.createElement(
 	    'div',
-	    { className: 'app' },
+	    null,
 	    _react2.default.createElement(_NavigationContainer2.default, null),
-	    children
+	    _react2.default.createElement(
+	      'div',
+	      { className: 'children-container' },
+	      children
+	    )
 	  );
 	};
 
@@ -28982,11 +28992,15 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
-	        _react2.default.createElement('img', { src: 'assets/logo.png', alt: 'crowded' }),
+	        { className: 'navigation-container' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'logo-container' },
+	          _react2.default.createElement('img', { className: 'logo', src: 'assets/logo.png', alt: 'crowded' })
+	        ),
 	        _react2.default.createElement(
 	          'ul',
-	          null,
+	          { className: 'navigation-links' },
 	          _react2.default.createElement(
 	            'li',
 	            null,
