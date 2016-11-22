@@ -29384,7 +29384,12 @@
 	                onClick: this.onParseClick.bind(this),
 	                className: 'upload-button parse'
 	              },
-	              'parse'
+	              'parse ',
+	              _react2.default.createElement(
+	                'i',
+	                { className: 'material-icons' },
+	                'play_arrow'
+	              )
 	            ),
 	            _react2.default.createElement(
 	              'div',
@@ -29497,7 +29502,7 @@
 /* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -29527,12 +29532,96 @@
 	  }
 	
 	  _createClass(_class, [{
-	    key: 'render',
+	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        'I AM PROFILE'
+	        "div",
+	        { className: "profile-container" },
+	        _react2.default.createElement("section", { className: "alt-cover-picture-container" }),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "articles-container" },
+	          _react2.default.createElement(
+	            "article",
+	            null,
+	            _react2.default.createElement(
+	              "div",
+	              { className: "article-left" },
+	              _react2.default.createElement(
+	                "div",
+	                { className: "author-picture-container" },
+	                _react2.default.createElement(
+	                  "a",
+	                  { href: "http://jaredjohnson.me/" },
+	                  _react2.default.createElement("img", { src: "assets/author.jpg", alt: "portfolio" })
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              "div",
+	              { className: "article-right" },
+	              _react2.default.createElement(
+	                "h1",
+	                null,
+	                "Jared Johnson"
+	              ),
+	              _react2.default.createElement(
+	                "h2",
+	                null,
+	                "Software and Chemical Engineer"
+	              ),
+	              _react2.default.createElement(
+	                "p",
+	                null,
+	                "I\u2019m an engineer. I thoroughly enjoy taking things apart, learning how they work, and rebuilding them to be better. In the past, I\u2019ve done this with chemical processes. Today, I make user experiences that inspire and change peoples lives. ",
+	                _react2.default.createElement(
+	                  "a",
+	                  { href: "http://jaredjohnson.me/" },
+	                  "Let's connect."
+	                )
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "article",
+	            null,
+	            _react2.default.createElement(
+	              "div",
+	              { className: "article-center" },
+	              _react2.default.createElement(
+	                "h1",
+	                null,
+	                "I AM AN ARTICLE"
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "article",
+	            null,
+	            _react2.default.createElement(
+	              "div",
+	              { className: "article-center" },
+	              _react2.default.createElement(
+	                "h1",
+	                null,
+	                "I AM AN ARTICLE"
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "article",
+	            null,
+	            _react2.default.createElement(
+	              "div",
+	              { className: "article-center" },
+	              _react2.default.createElement(
+	                "h1",
+	                null,
+	                "I AM AN ARTICLE"
+	              )
+	            )
+	          )
+	        )
 	      );
 	    }
 	  }]);

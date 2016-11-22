@@ -150,6 +150,13 @@ footer {
 
 /* HOME */
 
+.alt-cover-picture-container {
+  height: 300px;
+  width: inherit;
+  background-image: url("assets/alt_cover.jpg");
+  background-size: cover;
+}
+
 .cover-picture-container {
   height: 300px;
   width: inherit;

@@ -27,7 +27,7 @@ export default class extends React.Component {
               onClick={this.onParseClick.bind(this)} 
               className="upload-button parse"
             >
-              parse
+              parse <i className="material-icons">play_arrow</i>
             </div>
             <div className="reset-clear-container">
               <div 
