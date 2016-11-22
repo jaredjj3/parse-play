@@ -22645,12 +22645,16 @@
 	    }
 	  };
 	
+	  var onUpdate = function onUpdate() {
+	    return window.scrollTo(0, 0);
+	  };
+	
 	  return _react2.default.createElement(
 	    _reactRedux.Provider,
 	    { store: store },
 	    _react2.default.createElement(
 	      _reactRouter.Router,
-	      { history: _reactRouter.hashHistory },
+	      { history: _reactRouter.hashHistory, onUpdate: onUpdate },
 	      _react2.default.createElement(
 	        _reactRouter.Route,
 	        { path: '/', component: _App2.default, onEnter: onEnter },
@@ -29011,15 +29015,33 @@
 	var _class = function (_React$Component) {
 	  _inherits(_class, _React$Component);
 	
-	  function _class() {
+	  function _class(props) {
 	    _classCallCheck(this, _class);
 	
-	    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));
+	
+	    _this.state = {
+	      home: _this.locationMatches('home'),
+	      upload: _this.locationMatches('upload'),
+	      profile: _this.locationMatches('profile')
+	    };
+	    return _this;
 	  }
 	
 	  _createClass(_class, [{
+	    key: 'locationMatches',
+	    value: function locationMatches(location) {
+	      var re = new RegExp(location);
+	      return !!window.location.hash.match(re);
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var _state = this.state,
+	          home = _state.home,
+	          upload = _state.upload,
+	          profile = _state.profile;
+	
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'navigation-container' },
@@ -29033,10 +29055,10 @@
 	          ),
 	          _react2.default.createElement(
 	            'ul',
-	            { className: 'navigation-links' },
+	            { onClick: this.onClick.bind(this), className: 'navigation-links' },
 	            _react2.default.createElement(
 	              'li',
-	              null,
+	              { className: home ? "navigation-selected" : "" },
 	              _react2.default.createElement(
 	                _reactRouter.Link,
 	                { to: 'home' },
@@ -29045,7 +29067,7 @@
 	            ),
 	            _react2.default.createElement(
 	              'li',
-	              null,
+	              { className: upload ? "navigation-selected" : "" },
 	              _react2.default.createElement(
 	                _reactRouter.Link,
 	                { to: 'upload' },
@@ -29054,7 +29076,7 @@
 	            ),
 	            _react2.default.createElement(
 	              'li',
-	              null,
+	              { className: profile ? "navigation-selected" : "" },
 	              _react2.default.createElement(
 	                _reactRouter.Link,
 	                { to: 'profile' },
@@ -29071,7 +29093,13 @@
 	
 	  }, {
 	    key: 'onClick',
-	    value: function onClick() {}
+	    value: function onClick(e) {
+	      this.setState({
+	        home: this.locationMatches('home'),
+	        upload: this.locationMatches('upload'),
+	        profile: this.locationMatches('profile')
+	      });
+	    }
 	  }]);
 	
 	  return _class;
@@ -29125,21 +29153,25 @@
 	    { className: "home-container" },
 	    _react2.default.createElement("section", { className: "cover-picture-container" }),
 	    _react2.default.createElement(
-	      "article",
-	      null,
+	      "div",
+	      { className: "articles-container" },
 	      _react2.default.createElement(
-	        "h1",
+	        "article",
 	        null,
-	        "About this project"
-	      )
-	    ),
-	    _react2.default.createElement(
-	      "article",
-	      null,
+	        _react2.default.createElement(
+	          "h1",
+	          null,
+	          "About this project"
+	        )
+	      ),
 	      _react2.default.createElement(
-	        "h1",
+	        "article",
 	        null,
-	        "About the author"
+	        _react2.default.createElement(
+	          "h1",
+	          null,
+	          "About the author"
+	        )
 	      )
 	    )
 	  );

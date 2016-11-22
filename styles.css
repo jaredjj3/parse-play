@@ -83,13 +83,17 @@ nav {
   border-bottom: 1px solid whitesmoke;
   background: rgb(25, 80, 150);
   background: linear-gradient(rgb(25, 80, 140), rgb(25, 80, 170));
-  z-index: 2;
+  z-index: 3;
+}
+
+.navigation-selected {
+  color: rgb(100, 200, 255);
 }
 
 .navigation-spacer {
   display: block;
   color: transparent;
-  height: 60px;
+  height: 65px;
 }
 
 .navigation-container {
@@ -105,17 +109,18 @@ nav {
 }
 
 .navigation-links > li {
-  padding-top: 22px;
+  padding-top: 20px;
   margin-left: 25px;
 }
 
 .navigation-links > li:hover {
-  color: rgb(100, 200, 215);
+  color: rgb(106, 228, 247);
   cursor: pointer;
 }
 
 .logo-container {
-  width: 140px;
+  min-width: 100px;
+  max-width: 100px;
   margin: 20px 20px 20px 100px;
 }
 
@@ -133,6 +138,7 @@ footer {
 
 .home-container {
   width: 100%;
+  position: relative;
 }
 
 .cover-picture-container {
@@ -163,3 +169,21 @@ footer {
   margin-top: 30px;
   border-radius: 50%;
 }
+
+/* ARTICLES */
+
+.articles-container {
+  min-width: 600px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: absolute;
+  top: 250px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: whitesmoke;
+  border-bottom: 1px solid #aaa;
+  box-shadow: 1 1 3px #aaa;
+}
+
+article

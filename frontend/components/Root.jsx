@@ -14,9 +14,11 @@ export default ({ store }) => {
     }
   };
 
+  const onUpdate = () => window.scrollTo(0, 0);
+
   return(
     <Provider store={store}>
-      <Router history={hashHistory}>
+      <Router history={hashHistory} onUpdate={onUpdate}>
         <Route path="/" component={App} onEnter={onEnter}>
           <Route path="home" component={Home} />
           <Route path="upload" component={UploadContainer} />
