@@ -4,11 +4,12 @@ export default class extends React.Component {
 
   render () {
     const {
-      firstName,
-      lastName,
-      subtitle,
-      summary
-    } = this.props;
+      contact,
+      education,
+      experience,
+      general,
+      skills
+    } = this.props.profile;
     return(
       <div className="profile-container">
         <section className="alt-cover-picture-container"></section>
@@ -22,16 +23,15 @@ export default class extends React.Component {
               </div>
             </div>
             <div className="article-right">
-              <h1>{`${firstName} ${lastName}`}</h1>
-              <h2>{subtitle}</h2>
+              <h1>{`${general.firstName} ${general.lastName}`}</h1>
+              <h2>{general.subtitle}</h2>
+              <h3>
+                <a href={`mailto:${general.email}?Subject=Jared%2C%20you%27re%20hired!`}>{general.email}</a>
+              </h3>
+              <h3>{general.phone}</h3>
               <p>
-                {summary}
+                {general.summary}
               </p>
-              </div>
-          </article>
-          <article>
-            <div className="article-center">
-              <h1>Contact</h1>
             </div>
           </article>
           <article>

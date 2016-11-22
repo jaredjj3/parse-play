@@ -22598,10 +22598,31 @@
 	});
 	exports.default = {
 	  profile: {
-	    firstName: "Nullson",
-	    lastName: "McNullen",
-	    subtitle: "Null Engineer",
-	    summary: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+	    general: {
+	      firstName: "Nullson",
+	      lastName: "McNullen",
+	      subtitle: "Null Engineer",
+	      summary: "This is a default profile that's used for testing. Let's null.",
+	      phone: "(555) 555 - 5555",
+	      email: "null@null.com"
+	    },
+	    skills: ["defining null", "parsing nulls", "comparing null to undefined"],
+	    experience: [{
+	      title: "Null Engineer",
+	      company: "Null Inc.",
+	      dates: {
+	        from: "June 2015",
+	        to: "August 2015"
+	      },
+	      duties: ["Said null one too many times.", "Didn't say null enough"]
+	    }],
+	    education: {
+	      degree: "BS",
+	      school: "Null University",
+	      GPA: "null",
+	      major: "Null Engineering",
+	      minor: "Null Scientist"
+	    }
 	  }
 	};
 
@@ -29495,10 +29516,7 @@
 	
 	var mapStateToProps = function mapStateToProps(state) {
 	  return {
-	    firstName: state.profile.firstName,
-	    lastName: state.profile.lastName,
-	    subtitle: state.profile.subtitle,
-	    summary: state.profile.summary
+	    profile: state.profile
 	  };
 	};
 	
@@ -29544,11 +29562,12 @@
 	  _createClass(_class, [{
 	    key: "render",
 	    value: function render() {
-	      var _props = this.props,
-	          firstName = _props.firstName,
-	          lastName = _props.lastName,
-	          subtitle = _props.subtitle,
-	          summary = _props.summary;
+	      var _props$profile = this.props.profile,
+	          contact = _props$profile.contact,
+	          education = _props$profile.education,
+	          experience = _props$profile.experience,
+	          general = _props$profile.general,
+	          skills = _props$profile.skills;
 	
 	      return _react2.default.createElement(
 	        "div",
@@ -29579,30 +29598,31 @@
 	              _react2.default.createElement(
 	                "h1",
 	                null,
-	                firstName + " " + lastName
+	                general.firstName + " " + general.lastName
 	              ),
 	              _react2.default.createElement(
 	                "h2",
 	                null,
-	                subtitle
+	                general.subtitle
+	              ),
+	              _react2.default.createElement(
+	                "h3",
+	                null,
+	                _react2.default.createElement(
+	                  "a",
+	                  { href: "mailto:" + general.email + "?Subject=Jared%2C%20you%27re%20hired!" },
+	                  general.email
+	                )
+	              ),
+	              _react2.default.createElement(
+	                "h3",
+	                null,
+	                general.phone
 	              ),
 	              _react2.default.createElement(
 	                "p",
 	                null,
-	                summary
-	              )
-	            )
-	          ),
-	          _react2.default.createElement(
-	            "article",
-	            null,
-	            _react2.default.createElement(
-	              "div",
-	              { className: "article-center" },
-	              _react2.default.createElement(
-	                "h1",
-	                null,
-	                "Contact"
+	                general.summary
 	              )
 	            )
 	          ),

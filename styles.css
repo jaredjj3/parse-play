@@ -234,6 +234,7 @@ article a:hover {
 .article-right {
   padding: 10px;
   background: white;
+  width: 100%;
 }
 
 .article-center {
@@ -342,4 +343,10 @@ article a:hover {
 .reset-clear-container {
   display: flex;
   justify-content: space-between;
+}
+
+/* PROFILE */
+
+article h3 {
+  font-size: 14px;
 }
