@@ -5,7 +5,12 @@ export default class extends React.Component {
   render () {
     return(
       <div className="upload-container">
-        I AM UPLOAD
+        <div className="resume-container">
+          <h1>Type or paste your resume here</h1>
+          <textarea 
+            className="resume-text"
+          ></textarea>
+        </div>
       </div>
     );
   }

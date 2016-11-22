@@ -29345,7 +29345,18 @@
 	      return _react2.default.createElement(
 	        "div",
 	        { className: "upload-container" },
-	        "I AM UPLOAD"
+	        _react2.default.createElement(
+	          "div",
+	          { className: "resume-container" },
+	          _react2.default.createElement(
+	            "h1",
+	            null,
+	            "Type or paste your resume here"
+	          ),
+	          _react2.default.createElement("textarea", {
+	            className: "resume-text"
+	          })
+	        )
 	      );
 	    }
 	  }]);
