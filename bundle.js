@@ -22597,7 +22597,12 @@
 	  value: true
 	});
 	exports.default = {
-	  profile: null
+	  profile: {
+	    firstName: "Nullson",
+	    lastName: "McNullen",
+	    subtitle: "Null Engineer",
+	    summary: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+	  }
 	};
 
 /***/ },
@@ -29489,7 +29494,12 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var mapStateToProps = function mapStateToProps(state) {
-	  return {};
+	  return {
+	    firstName: state.profile.firstName,
+	    lastName: state.profile.lastName,
+	    subtitle: state.profile.subtitle,
+	    summary: state.profile.summary
+	  };
 	};
 	
 	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -29534,6 +29544,12 @@
 	  _createClass(_class, [{
 	    key: "render",
 	    value: function render() {
+	      var _props = this.props,
+	          firstName = _props.firstName,
+	          lastName = _props.lastName,
+	          subtitle = _props.subtitle,
+	          summary = _props.summary;
+	
 	      return _react2.default.createElement(
 	        "div",
 	        { className: "profile-container" },
@@ -29563,22 +29579,17 @@
 	              _react2.default.createElement(
 	                "h1",
 	                null,
-	                "Jared Johnson"
+	                firstName + " " + lastName
 	              ),
 	              _react2.default.createElement(
 	                "h2",
 	                null,
-	                "Software and Chemical Engineer"
+	                subtitle
 	              ),
 	              _react2.default.createElement(
 	                "p",
 	                null,
-	                "I\u2019m an engineer. I thoroughly enjoy taking things apart, learning how they work, and rebuilding them to be better. In the past, I\u2019ve done this with chemical processes. Today, I make user experiences that inspire and change peoples lives. ",
-	                _react2.default.createElement(
-	                  "a",
-	                  { href: "http://jaredjohnson.me/" },
-	                  "Let's connect."
-	                )
+	                summary
 	              )
 	            )
 	          ),
@@ -29591,7 +29602,7 @@
 	              _react2.default.createElement(
 	                "h1",
 	                null,
-	                "I AM AN ARTICLE"
+	                "Contact"
 	              )
 	            )
 	          ),
@@ -29604,7 +29615,7 @@
 	              _react2.default.createElement(
 	                "h1",
 	                null,
-	                "I AM AN ARTICLE"
+	                "Experience"
 	              )
 	            )
 	          ),
@@ -29617,7 +29628,20 @@
 	              _react2.default.createElement(
 	                "h1",
 	                null,
-	                "I AM AN ARTICLE"
+	                "Education"
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "article",
+	            null,
+	            _react2.default.createElement(
+	              "div",
+	              { className: "article-center" },
+	              _react2.default.createElement(
+	                "h1",
+	                null,
+	                "Links"
 	              )
 	            )
 	          )

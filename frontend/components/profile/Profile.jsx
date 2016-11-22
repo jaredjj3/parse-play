@@ -3,6 +3,12 @@ import React from 'react';
 export default class extends React.Component {
 
   render () {
+    const {
+      firstName,
+      lastName,
+      subtitle,
+      summary
+    } = this.props;
     return(
       <div className="profile-container">
         <section className="alt-cover-picture-container"></section>
@@ -16,26 +22,31 @@ export default class extends React.Component {
               </div>
             </div>
             <div className="article-right">
-              <h1>Jared Johnson</h1>
-              <h2>Software and Chemical Engineer</h2>
+              <h1>{`${firstName} ${lastName}`}</h1>
+              <h2>{subtitle}</h2>
               <p>
-                I’m an engineer. I thoroughly enjoy taking things apart, learning how they work, and rebuilding them to be better. In the past, I’ve done this with chemical processes. Today, I make user experiences that inspire and change peoples lives. <a href="http://jaredjohnson.me/">Let's connect.</a>
+                {summary}
               </p>
               </div>
           </article>
           <article>
             <div className="article-center">
-              <h1>I AM AN ARTICLE</h1>
+              <h1>Contact</h1>
             </div>
           </article>
           <article>
             <div className="article-center">
-              <h1>I AM AN ARTICLE</h1>
+              <h1>Experience</h1>
             </div>
           </article>
           <article>
             <div className="article-center">
-              <h1>I AM AN ARTICLE</h1>
+              <h1>Education</h1>
+            </div>
+          </article>
+          <article>
+            <div className="article-center">
+              <h1>Links</h1>
             </div>
           </article>
         </div>
