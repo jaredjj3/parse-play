@@ -29310,7 +29310,7 @@
 /* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -29321,6 +29321,10 @@
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _sampleResume = __webpack_require__(304);
+	
+	var _sampleResume2 = _interopRequireDefault(_sampleResume);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -29333,31 +29337,126 @@
 	var _class = function (_React$Component) {
 	  _inherits(_class, _React$Component);
 	
-	  function _class() {
+	  function _class(props) {
 	    _classCallCheck(this, _class);
 	
-	    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).call(this, props));
+	
+	    _this.state = {
+	      resumeText: _sampleResume2.default,
+	      errors: []
+	    };
+	    return _this;
 	  }
 	
 	  _createClass(_class, [{
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
+	      var errors = this.state.errors.map(function (error) {
+	        return _react2.default.createElement(
+	          'li',
+	          null,
+	          error
+	        );
+	      });
 	      return _react2.default.createElement(
-	        "div",
-	        { className: "upload-container" },
+	        'div',
+	        { className: 'upload-container' },
 	        _react2.default.createElement(
-	          "div",
-	          { className: "resume-container" },
+	          'div',
+	          { className: 'resume-container' },
 	          _react2.default.createElement(
-	            "h1",
+	            'h1',
 	            null,
-	            "Type or paste your resume here"
+	            'Type or paste your resume here'
 	          ),
-	          _react2.default.createElement("textarea", {
-	            className: "resume-text"
-	          })
+	          _react2.default.createElement('textarea', {
+	            className: 'resume-text',
+	            value: this.state.resumeText,
+	            onChange: this.onChange.bind(this)
+	          }),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'resume-buttons-container' },
+	            _react2.default.createElement(
+	              'div',
+	              {
+	                onClick: this.onParseClick.bind(this),
+	                className: 'upload-button parse'
+	              },
+	              'parse'
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'reset-clear-container' },
+	              _react2.default.createElement(
+	                'div',
+	                {
+	                  onClick: this.onResetClick.bind(this),
+	                  className: 'upload-button clear reset'
+	                },
+	                'reset'
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                {
+	                  onClick: this.onClearClick.bind(this),
+	                  className: 'upload-button clear'
+	                },
+	                'clear'
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'ul',
+	            { className: 'upload-errors' },
+	            errors
+	          )
 	        )
 	      );
+	    }
+	
+	    // event handlers
+	
+	  }, {
+	    key: 'onParseClick',
+	    value: function onParseClick(e) {
+	      if (this.state.resumeText.length <= 140) {
+	        if (this.state.errors.length === 0) {
+	          var errorsCopy = this.state.errors;
+	          errorsCopy.push("Resume needs to be at least 140 characters.");
+	          this.setState({
+	            errors: errorsCopy
+	          });
+	        }
+	        return;
+	      } else {
+	        this.setState({
+	          errors: []
+	        });
+	      }
+	    }
+	  }, {
+	    key: 'onChange',
+	    value: function onChange(e) {
+	      this.setState({
+	        errors: [],
+	        resumeText: e.target.value
+	      });
+	    }
+	  }, {
+	    key: 'onResetClick',
+	    value: function onResetClick(e) {
+	      this.setState({
+	        resumeText: _sampleResume2.default
+	      });
+	    }
+	  }, {
+	    key: 'onClearClick',
+	    value: function onClearClick(e) {
+	      this.setState({
+	        resumeText: ""
+	      });
 	    }
 	  }]);
 	
@@ -31405,6 +31504,17 @@
 	  else this.add(className)
 	}
 
+
+/***/ },
+/* 304 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = "Name: John Doe \nPhone: (555) 555-5555 \nEmail: johndoe@example.com\n\nOBJECTIVE \nExcel in a web developer career.\n\nKEY SKILLS\nDevelopment: HTML5, JavaScript, Bootstrap, AngularJS, ReactJS, CSS3, Media Queries, Development\nProject Management: JIRA, Bitbucket, Confluence, Git, GitHub\n\nEMPLOYMENT HISTORY\nTitle: Junior Web Developer\nCompany: Apple Inc. \nDates: June 2015 to September 2016\n* Developed responsive corporate websites\n* Did some cool stuff\n* Led team in closing out JIRA bugs\n\nTitle: Web Development Intern \nCompany: Google Inc.\nDates: January 2015 to May 2015\n* Went on coffee runs for the team\n* Team record for longest keg stand\n* Once ate 82 cupcakes during a team building event\n\nEDUCATION\nDegree: BBA \nSchool: Michigan State University\nGPA: 2.2\nMajor: Computer Science\nMinor: Drinking";
 
 /***/ }
 /******/ ]);
