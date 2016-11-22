@@ -1,4 +1,7 @@
 export default {
+  resume: {
+    text: null
+  },
   profile: {
     general: {
       firstName: "Nullson",

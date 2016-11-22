@@ -26,7 +26,11 @@ export default class extends React.Component {
               <h1>{`${general.firstName} ${general.lastName}`}</h1>
               <h2>{general.subtitle}</h2>
               <h3>
-                <a href={`mailto:${general.email}?Subject=Jared%2C%20you%27re%20hired!`}>{general.email}</a>
+                <a 
+                  href={`mailto:${general.email}?Subject=Jared%2C%20you%27re%20hired!`}
+                >
+                  {general.email}
+                </a>
               </h3>
               <h3>{general.phone}</h3>
               <p>

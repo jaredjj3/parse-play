@@ -22597,6 +22597,9 @@
 	  value: true
 	});
 	exports.default = {
+	  resume: {
+	    text: null
+	  },
 	  profile: {
 	    general: {
 	      firstName: "Nullson",
@@ -29610,7 +29613,9 @@
 	                null,
 	                _react2.default.createElement(
 	                  "a",
-	                  { href: "mailto:" + general.email + "?Subject=Jared%2C%20you%27re%20hired!" },
+	                  {
+	                    href: "mailto:" + general.email + "?Subject=Jared%2C%20you%27re%20hired!"
+	                  },
 	                  general.email
 	                )
 	              ),
