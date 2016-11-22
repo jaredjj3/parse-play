@@ -54,8 +54,8 @@ cursor: pointer;
 }
 
 body {
-font-family: 'Open Sans', sans-serif;
-line-height: 1.4;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.4;
 }
 
 input, textarea {
@@ -63,10 +63,20 @@ input, textarea {
   -webkit-border-radius: 0;
 }
 
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
 /* APPLICATION */
 
 .children-container {
-  min-height: 900px;
+  min-height: 600px;
   display: flex;
 }
 
@@ -93,7 +103,7 @@ nav {
 .navigation-spacer {
   display: block;
   color: transparent;
-  height: 65px;
+  height: inherit;
 }
 
 .navigation-container {
@@ -144,7 +154,6 @@ footer {
 .cover-picture-container {
   height: 300px;
   width: inherit;
-  position: relative;
   background-image: url("assets/cover.jpg");
   background-size: cover;
 }
@@ -166,7 +175,6 @@ footer {
 
 .author-picture-container {
   width: 200px;
-  margin-top: 30px;
   border-radius: 50%;
 }
 
@@ -176,14 +184,69 @@ footer {
   min-width: 600px;
   max-width: 900px;
   margin: 0 auto;
-  position: absolute;
-  top: 250px;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  background: whitesmoke;
-  border-bottom: 1px solid #aaa;
-  box-shadow: 1 1 3px #aaa;
 }
 
-article
+article {
+  background: #eee;
+  padding: 20px;
+  margin: 15px;
+  min-height: 200px;
+  display: flex;
+}
+
+article h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+article h2 {
+  font-size: 16px;
+  font-style: italic;
+}
+
+article p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+article a {
+  font-size: 14px;
+  padding-top: 20px;
+  color: rgb(100, 200, 255);
+}
+
+article a:hover {
+  color: rgb(106, 228, 247);
+}
+
+.article-left {
+  margin-right: 20px;
+  padding: 10px;
+  background: white;
+}
+
+.article-right {
+  padding: 10px;
+  background: white;
+}
+
+.article-center {
+  background: white;
+  padding: 10px;
+  width: 100%;
+}
+
+/* DEVICONS */
+
+.devicons {
+  font-size: 64px;
+}
+
+.devicons-list {
+  display: flex;
+  margin-top: 5px;
+}
+
+.devicons-list li {
+  margin-right: 10px;
+}

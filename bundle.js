@@ -29135,7 +29135,7 @@
 /* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -29145,32 +29145,133 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactRouter = __webpack_require__(214);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = function () {
 	  return _react2.default.createElement(
-	    "div",
-	    { className: "home-container" },
-	    _react2.default.createElement("section", { className: "cover-picture-container" }),
+	    'div',
+	    { className: 'home-container' },
+	    _react2.default.createElement('section', { className: 'cover-picture-container' }),
 	    _react2.default.createElement(
-	      "div",
-	      { className: "articles-container" },
+	      'div',
+	      { className: 'articles-container' },
 	      _react2.default.createElement(
-	        "article",
+	        'article',
 	        null,
 	        _react2.default.createElement(
-	          "h1",
-	          null,
-	          "About this project"
+	          'div',
+	          { className: 'article-left' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'author-picture-container' },
+	            _react2.default.createElement(
+	              'a',
+	              { href: 'http://jaredjohnson.me/' },
+	              _react2.default.createElement('img', { src: 'assets/author.jpg', alt: 'portfolio' })
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'article-right' },
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            'Jared Johnson'
+	          ),
+	          _react2.default.createElement(
+	            'h2',
+	            null,
+	            'Software and Chemical Engineer'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'I\u2019m an engineer. I thoroughly enjoy taking things apart, learning how they work, and rebuilding them to be better. In the past, I\u2019ve done this with chemical processes. Today, I make user experiences that inspire and change peoples lives. ',
+	            _react2.default.createElement(
+	              'a',
+	              { href: 'http://jaredjohnson.me/' },
+	              'Let\'s connect.'
+	            )
+	          )
 	        )
 	      ),
 	      _react2.default.createElement(
-	        "article",
+	        'article',
 	        null,
 	        _react2.default.createElement(
-	          "h1",
-	          null,
-	          "About the author"
+	          'div',
+	          { className: 'article-center' },
+	          _react2.default.createElement(
+	            'h1',
+	            null,
+	            'About Parse Play'
+	          ),
+	          _react2.default.createElement(
+	            'h2',
+	            null,
+	            'You press play to resume... So this must be a resume parser!'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            _react2.default.createElement(
+	              'b',
+	              null,
+	              'Project time: ~8 hours'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'It\'s simple: A plaintext resume is copied-and-pasted in the ',
+	            _react2.default.createElement(
+	              'em',
+	              null,
+	              _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: 'upload' },
+	                '/upload'
+	              )
+	            ),
+	            ' route. Parse Play will generate an easy-to-update profile based on the plaintext contents. There is no backend component, so state is not persisted between each request-response cycle.'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Parse Play was brought to you by:'
+	          ),
+	          _react2.default.createElement(
+	            'ul',
+	            { className: 'devicons-list' },
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement('i', { className: 'devicons devicon-react-original-wordmark colored' })
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement('i', { className: 'devicons devicon-javascript-plain colored' })
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement('i', { className: 'devicons devicon-html5-plain-wordmark colored' })
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement('i', { className: 'devicons devicon-css3-plain-wordmark colored' })
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              null,
+	              _react2.default.createElement('i', { className: 'devicons devicon-github-plain-wordmark colored' })
+	            )
+	          )
 	        )
 	      )
 	    )
