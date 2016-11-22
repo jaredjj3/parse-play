@@ -9,7 +9,7 @@ export default class extends React.Component {
       <Modal
         className='profile-form-container form-container group'
         isOpen={this.props.fileModalOn}
-        onRequestClose={this.onClickout}
+        onRequestClose={this.onClose}
         style={modalStyle}
       >
         I AM MODAL
@@ -19,8 +19,8 @@ export default class extends React.Component {
 
   // event methods
 
-  onClickout() {
-    console.log('clicked out')
+  onClose() {
+    this.props.toggleFileModal();
   }
 
 }

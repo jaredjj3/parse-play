@@ -30931,7 +30931,7 @@
 	        {
 	          className: 'profile-form-container form-container group',
 	          isOpen: this.props.fileModalOn,
-	          onRequestClose: this.onClickout,
+	          onRequestClose: this.onClose,
 	          style: _modalStyle2.default
 	        },
 	        'I AM MODAL'
@@ -30941,9 +30941,9 @@
 	    // event methods
 	
 	  }, {
-	    key: 'onClickout',
-	    value: function onClickout() {
-	      console.log('clicked out');
+	    key: 'onClose',
+	    value: function onClose() {
+	      this.props.toggleFileModal();
 	    }
 	  }]);
 	
@@ -31035,7 +31035,7 @@
 	});
 	exports.default = {
 	  modal: {
-	    fileModalOn: true
+	    fileModalOn: false
 	  }
 	};
 

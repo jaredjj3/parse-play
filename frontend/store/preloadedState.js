@@ -1,5 +1,5 @@
 export default {
   modal: {
-    fileModalOn: true
+    fileModalOn: false
   }
 };
