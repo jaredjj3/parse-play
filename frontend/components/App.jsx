@@ -1,10 +1,10 @@
 import React from 'react';
 
-import FileFormContainer from './forms/FileFormContainer';
+import NavigationContainer from './navigation/NavigationContainer';
 
 export default ({ children }) => (
   <div className='app'>
-    <FileFormContainer />
+    <NavigationContainer />
     { children }
   </div>
 );

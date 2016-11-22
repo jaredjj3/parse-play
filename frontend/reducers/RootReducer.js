@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import ModalReducer from './ModalReducer';
+import ProfileReducer from './ProfileReducer';
 
 export default combineReducers({
-  modal: ModalReducer
+  profile: ProfileReducer
 });

@@ -2,10 +2,11 @@ import React from 'react';
 
 export default class extends React.Component {
 
-  render() {
+  render () {
     return(
-      <h1>Hello, world! I am the test page!</h1>
+      <div>
+        I AM UPLOAD
+      </div>
     );
   }
-
 }

@@ -1,5 +1,3 @@
 export default {
-  modal: {
-    fileModalOn: false
-  }
+  profile: null
 };
