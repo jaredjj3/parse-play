@@ -80,6 +80,10 @@ input, textarea {
   display: flex;
 }
 
+.children-container > div {
+  width: 100%;
+}
+
 /* NAVIGATION */
 
 nav { 
@@ -108,6 +112,7 @@ nav {
 
 .navigation-container {
   width: 100%;
+  height: 60px;
 }
 
 .navigation-links {
@@ -145,11 +150,6 @@ footer {
 }
 
 /* HOME */
-
-.home-container {
-  width: 100%;
-  position: relative;
-}
 
 .cover-picture-container {
   height: 300px;
@@ -250,3 +250,6 @@ article a:hover {
 .devicons-list li {
   margin-right: 10px;
 }
+
+/* UPLOAD */
+

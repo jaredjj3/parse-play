@@ -20,7 +20,7 @@ export default () => {
             <p>
               I’m an engineer. I thoroughly enjoy taking things apart, learning how they work, and rebuilding them to be better. In the past, I’ve done this with chemical processes. Today, I make user experiences that inspire and change peoples lives. <a href="http://jaredjohnson.me/">Let's connect.</a>
             </p>
-          </div>
+            </div>
         </article>
         <article>
           <div className="article-center">
