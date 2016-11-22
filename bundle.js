@@ -21483,10 +21483,14 @@
 	
 	var _RootMiddleware2 = _interopRequireDefault(_RootMiddleware);
 	
+	var _preloadedState = __webpack_require__(300);
+	
+	var _preloadedState2 = _interopRequireDefault(_preloadedState);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = function () {
-	  return (0, _redux.createStore)(_RootReducer2.default, _RootMiddleware2.default);
+	  return (0, _redux.createStore)(_RootReducer2.default, _preloadedState2.default, _RootMiddleware2.default);
 	};
 
 /***/ },
@@ -22534,7 +22538,15 @@
 	
 	var _redux = __webpack_require__(179);
 	
-	exports.default = (0, _redux.combineReducers)({});
+	var _ModalReducer = __webpack_require__(299);
+	
+	var _ModalReducer2 = _interopRequireDefault(_ModalReducer);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = (0, _redux.combineReducers)({
+	  modal: _ModalReducer2.default
+	});
 
 /***/ },
 /* 201 */
@@ -28855,6 +28867,10 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _FileFormContainer = __webpack_require__(294);
+	
+	var _FileFormContainer2 = _interopRequireDefault(_FileFormContainer);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = function (_ref) {
@@ -28862,6 +28878,7 @@
 	  return _react2.default.createElement(
 	    'div',
 	    { className: 'app' },
+	    _react2.default.createElement(_FileFormContainer2.default, null),
 	    children
 	  );
 	};
@@ -30828,6 +30845,199 @@
 	  else this.add(className)
 	}
 
+
+/***/ },
+/* 294 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _reactRedux = __webpack_require__(203);
+	
+	var _FileForm = __webpack_require__(295);
+	
+	var _FileForm2 = _interopRequireDefault(_FileForm);
+	
+	var _ModalActions = __webpack_require__(298);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var mapStateToProps = function mapStateToProps(state) {
+	  return {
+	    fileModalOn: state.modal.fileModalOn
+	  };
+	};
+	
+	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	  return {
+	    toggleFileModal: function toggleFileModal() {
+	      return dispatch((0, _ModalActions.toggleModal)('file'));
+	    }
+	  };
+	};
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_FileForm2.default);
+
+/***/ },
+/* 295 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactModal = __webpack_require__(274);
+	
+	var _reactModal2 = _interopRequireDefault(_reactModal);
+	
+	var _modalStyle = __webpack_require__(297);
+	
+	var _modalStyle2 = _interopRequireDefault(_modalStyle);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var _class = function (_React$Component) {
+	  _inherits(_class, _React$Component);
+	
+	  function _class() {
+	    _classCallCheck(this, _class);
+	
+	    return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+	  }
+	
+	  _createClass(_class, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _reactModal2.default,
+	        {
+	          className: 'profile-form-container form-container group',
+	          isOpen: this.props.fileModalOn,
+	          onRequestClose: this.onClickout,
+	          style: _modalStyle2.default
+	        },
+	        'I AM MODAL'
+	      );
+	    }
+	
+	    // event methods
+	
+	  }, {
+	    key: 'onClickout',
+	    value: function onClickout() {
+	      console.log('clicked out');
+	    }
+	  }]);
+	
+	  return _class;
+	}(_react2.default.Component);
+	
+	exports.default = _class;
+
+/***/ },
+/* 296 */,
+/* 297 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {
+	  overlay: {
+	    position: 'fixed',
+	    top: 0,
+	    left: 0,
+	    right: 0,
+	    bottom: 0,
+	    zIndex: 10,
+	    backgroundColor: 'rgba(150, 150, 150, 0.80)'
+	  }
+	};
+
+/***/ },
+/* 298 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var TOGGLE_MODAL = exports.TOGGLE_MODAL = 'TOGGLE_MODAL';
+	
+	var toggleModal = exports.toggleModal = function toggleModal(modal) {
+	  return {
+	    type: TOGGLE_MODAL,
+	    modal: modal
+	  };
+	};
+
+/***/ },
+/* 299 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _ModalActions = __webpack_require__(298);
+	
+	var _defaultModals = Object.freeze({
+	  fileModalOn: false
+	});
+	
+	exports.default = function () {
+	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _defaultModals;
+	  var action = arguments[1];
+	
+	  Object.freeze(state);
+	  var nextState = Object.assign({}, state);
+	  switch (action.type) {
+	    case _ModalActions.TOGGLE_MODAL:
+	      var targetModal = action.modal + 'ModalOn';
+	      nextState.targetModal = !nextState.targetModal;
+	      return nextState;
+	    default:
+	      return nextState;
+	  }
+	};
+
+/***/ },
+/* 300 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {
+	  modal: {
+	    fileModalOn: true
+	  }
+	};
 
 /***/ }
 /******/ ]);
