@@ -5,7 +5,7 @@ export default {
       firstName: "Nullson",
       lastName: "McNullen",
       subtitle: "Null Engineer",
-      summary: `This is a default profile that's used for testing. Let's null.`,
+      summary: `This is a default profile that's used for testing.`,
       phone: "(555) 555 - 5555",
       email: "null@null.com"
     },
@@ -39,8 +39,9 @@ export default {
           to: "August 2015"
         },
         duties: [
-          "Said null one too many times. Sometimes, you just never know.",
-          "Didn't say null enough"
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "Suspendisse gravida, ipsum non tincidunt laoreet.",
+          "Dolor ipsum aliquam nisi, eget viverra."
         ]
       },
       {
@@ -51,9 +52,8 @@ export default {
           to: "August 2015"
         },
         duties: [
-          "Discovered null",
-          "Invented null",
-          "Made null so much more"
+          "Lorem ipsum dolor sit amet", 
+          "consectetur adipiscing elit. Ut eleifend."
         ]
       },
     ],
@@ -61,9 +61,9 @@ export default {
       {
         degree: "BS",
         school: "Null University",
-        GPA: "null/null.0",
+        GPA: "4.0",
         major: "Null Engineering",
-        minor: "Null Scientist"
+        minor: "Null Sciences"
       }
     ]
   }
