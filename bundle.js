@@ -29279,6 +29279,11 @@
 	  }
 	
 	  _createClass(_class, [{
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      this.onClick();
+	    }
+	  }, {
 	    key: 'locationMatches',
 	    value: function locationMatches(location) {
 	      var re = new RegExp(location);
@@ -30059,7 +30064,7 @@
 	  });
 	  return _react2.default.createElement(
 	    "ul",
-	    null,
+	    { className: "experience-item-list" },
 	    educationItems
 	  );
 	};

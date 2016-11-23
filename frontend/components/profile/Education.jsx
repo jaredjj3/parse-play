@@ -10,7 +10,7 @@ export default ({ education }) => {
     </li>
   );
   return(
-    <ul>
+    <ul className="experience-item-list">
       {educationItems}  
     </ul>
   );

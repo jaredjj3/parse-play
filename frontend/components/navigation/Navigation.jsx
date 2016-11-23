@@ -11,6 +11,10 @@ export default class extends React.Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.onClick();
+  }
+
   locationMatches (location) {
     const re = new RegExp(location);
     return !!window.location.hash.match(re);
