@@ -4,3 +4,7 @@ export const email = /\w+\@\w+\.\w+/;
 export const primaryField = /^[A-Z\s]+(\s+)?$/;
 export const secondaryField = /[a-zA-Z]+\:/;
 export const designator = /[\w\s]+\:/g;
+export const title = /[tT]itle:\s+(.+)/;
+export const dates = /[dD]ates:\s+(.+)/;
+export const company = /[cC]ompany:\s+(.+)/;
+export const duties = /\*.+/g;

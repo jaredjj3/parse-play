@@ -22563,6 +22563,8 @@
 	  value: true
 	});
 	
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	
 	var _ProfileActions = __webpack_require__(395);
 	
 	var _regex = __webpack_require__(396);
@@ -22601,19 +22603,116 @@
 	  if (pri === null) {
 	    return;
 	  }
-	  // console.log(pri);
-	  switch (pri.trim().toUpperCase()) {
-	    case 'SUMMARY':
-	    case 'OBJECTIVE':
-	      obj.general.summary = blockToLines(block).slice(1).join(" ");
-	      return;
-	    case 'SKILLS':
-	    case 'KEY SKILLS':
-	      var skills = blockToLines(block).slice(1).join(",").replace(regex.designator, "").split(",");
-	      obj.skills = skills;
-	      return;
-	    default:
-	      return;
+	
+	  var _ret = function () {
+	    switch (pri.trim().toUpperCase()) {
+	      case 'SUMMARY':
+	      case 'OBJECTIVE':
+	        obj.general.summary = blockToLines(block).slice(1).join(" ");
+	        return {
+	          v: void 0
+	        };
+	      case 'SKILLS':
+	      case 'KEY SKILLS':
+	        var skills = blockToLines(block).slice(1).join(",").replace(regex.designator, "").split(",");
+	        obj.skills = skills;
+	        return {
+	          v: void 0
+	        };
+	      case 'EMPLOYMENT':
+	      case 'EMPLOYMENT HISTORY':
+	      case 'EXPERIENCE':
+	        var lines = blockToLines(block);
+	        var newBlock = lines.join("\n");
+	        if (lines[0].match(regex.primaryField)) {
+	          newBlock = lines.slice(1).join("\n");
+	        }
+	        var experience = {
+	          title: "",
+	          company: "",
+	          dates: {
+	            from: "",
+	            to: ""
+	          },
+	          duties: []
+	        };
+	        checkTitle(experience, newBlock);
+	        checkCompany(experience, newBlock);
+	        checkDates(experience, newBlock);
+	        checkDuties(experience, newBlock);
+	        obj.experience.push(experience);
+	        return {
+	          v: void 0
+	        };
+	      case 'EDUCATION':
+	        var eduLines = blockToLines(block);
+	        var eduBlock = eduLines.join("\n");
+	        if (eduLines[0].match(regex.primaryField)) {
+	          eduBlock = eduLines.slice(1).join("\n");
+	        }
+	        var education = {
+	          degree: "",
+	          school: "",
+	          GPA: "",
+	          major: "",
+	          minor: ""
+	        };
+	        // since this structure is much more simpler,
+	        // we can assign values much easier than the others
+	        Object.keys(education).forEach(function (key) {
+	          checkKey(education, eduBlock, key);
+	        });
+	        obj.education.push(education);
+	        return {
+	          v: void 0
+	        };
+	      default:
+	        return {
+	          v: void 0
+	        };
+	    }
+	  }();
+	
+	  if ((typeof _ret === 'undefined' ? 'undefined' : _typeof(_ret)) === "object") return _ret.v;
+	};
+	
+	var checkKey = function checkKey(obj, str, key) {
+	  var reg = new RegExp('[' + key[0].toLowerCase() + key[0].toUpperCase() + ']' + key.slice(1) + ':\\s+(.+)');
+	  var matches = str.match(reg);
+	  if (matches) {
+	    obj[key] = matches[1];
+	  }
+	};
+	
+	var checkDuties = function checkDuties(obj, str) {
+	  var matches = str.match(regex.duties);
+	  if (matches) {
+	    obj.duties = matches.map(function (match) {
+	      return match.replace("*", "");
+	    });
+	  }
+	};
+	
+	var checkCompany = function checkCompany(obj, str) {
+	  var matches = str.match(regex.company);
+	  if (matches) {
+	    obj.company = matches[1].trim();
+	  }
+	};
+	
+	var checkDates = function checkDates(obj, str) {
+	  var matches = str.match(regex.dates);
+	  if (matches) {
+	    var arr = matches[1].split(" to ");
+	    obj.dates.from = arr[0];
+	    obj.dates.to = arr[1];
+	  }
+	};
+	
+	var checkTitle = function checkTitle(obj, str) {
+	  var matches = str.match(regex.title);
+	  if (matches) {
+	    obj.title = matches[1];
 	  }
 	};
 	
@@ -22654,10 +22753,12 @@
 	      checkPhone(nextState, resumeText);
 	      checkEmail(nextState, resumeText);
 	      var blocks = getBlocks(action.resumeText);
+	      var pri = null;
 	      for (var i = 0; i < blocks.length; i++) {
 	        var block = blocks[i];
 	        var lines = blockToLines(block);
-	        var pri = check(lines[0], regex.primaryField);
+	        var checked = check(lines[0], regex.primaryField);
+	        pri = checked ? checked : pri;
 	        handlePri(nextState, pri, block);
 	      }
 	
@@ -29602,7 +29703,7 @@
 	        });
 	      }
 	      this.props.parseResume(this.state.resumeText);
-	      // hashHistory.push("profile");
+	      _reactRouter.hashHistory.push("profile");
 	    }
 	  }, {
 	    key: 'onChange',
@@ -34700,6 +34801,10 @@
 	var primaryField = exports.primaryField = /^[A-Z\s]+(\s+)?$/;
 	var secondaryField = exports.secondaryField = /[a-zA-Z]+\:/;
 	var designator = exports.designator = /[\w\s]+\:/g;
+	var title = exports.title = /[tT]itle:\s+(.+)/;
+	var dates = exports.dates = /[dD]ates:\s+(.+)/;
+	var company = exports.company = /[cC]ompany:\s+(.+)/;
+	var duties = exports.duties = /\*.+/g;
 
 /***/ }
 /******/ ]);

@@ -27,7 +27,6 @@ const handlePri = (obj, pri, block) => {
   if (pri === null) {
     return;
   }
-  // console.log(pri);
   switch(pri.trim().toUpperCase()) {
     case 'SUMMARY':
     case 'OBJECTIVE':
@@ -42,8 +41,93 @@ const handlePri = (obj, pri, block) => {
         .split(",");
       obj.skills = skills;
       return;
+    case 'EMPLOYMENT':
+    case 'EMPLOYMENT HISTORY':
+    case 'EXPERIENCE':
+      const lines = blockToLines(block);
+      let newBlock = lines.join("\n")
+      if (lines[0].match(regex.primaryField)) {
+        newBlock = lines.slice(1).join("\n")
+      }
+      const experience = {
+        title: "",
+        company: "",
+        dates: {
+          from: "",
+          to: ""
+        },
+        duties: []
+      };
+      checkTitle(experience, newBlock);
+      checkCompany(experience, newBlock);
+      checkDates(experience, newBlock);
+      checkDuties(experience, newBlock);
+      obj.experience.push(experience);
+      return;
+    case 'EDUCATION':
+      const eduLines = blockToLines(block);
+      let eduBlock = eduLines.join("\n")
+      if (eduLines[0].match(regex.primaryField)) {
+        eduBlock = eduLines.slice(1).join("\n")
+      }
+      const education = {
+        degree: "",
+        school: "",
+        GPA: "",
+        major: "",
+        minor: ""
+      };
+      // since this structure is much more simpler,
+      // we can assign values much easier than the others
+      Object.keys(education).forEach( key => {
+        checkKey(education, eduBlock, key);
+      });
+      obj.education.push(education);
+      return;
     default:
       return;
+  }
+};
+
+const checkKey = (obj, str, key) => {
+  const reg = new RegExp(
+    `[${key[0].toLowerCase()}${key[0].toUpperCase()}]${key.slice(1)}:\\s+(.+)`
+  );
+  const matches = str.match(reg);
+  if (matches) {
+    obj[key] = matches[1]; 
+  }
+};
+
+const checkDuties = (obj, str) => {
+  const matches = str.match(regex.duties);
+  if (matches) {
+    obj.duties = matches.map(match => (
+      match.replace("*", "")
+    ));
+  }
+};
+
+const checkCompany = (obj, str) => {
+  const matches = str.match(regex.company);
+  if (matches) {
+    obj.company = matches[1].trim();
+  }
+};
+
+const checkDates = (obj, str) => {
+  const matches = str.match(regex.dates);
+  if (matches) {
+    const arr = matches[1].split(" to ");
+    obj.dates.from = arr[0];
+    obj.dates.to = arr[1];
+  }
+};
+
+const checkTitle = (obj, str) => {
+  const matches = str.match(regex.title);
+  if (matches) {
+    obj.title = matches[1];
   }
 };
 
@@ -80,10 +164,12 @@ export default (state = _defaultProfile, action) => {
       checkPhone(nextState, resumeText);
       checkEmail(nextState, resumeText);
       const blocks = getBlocks(action.resumeText);
+      let pri = null;
       for (let i = 0; i < blocks.length; i++) {
         const block = blocks[i];
         const lines = blockToLines(block);
-        const pri = check(lines[0], regex.primaryField);
+        const checked = check(lines[0], regex.primaryField);
+        pri = checked ? checked : pri; 
         handlePri(nextState, pri, block);
       }
       
