@@ -22557,7 +22557,7 @@
 /* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -22565,12 +22565,80 @@
 	
 	var _ProfileActions = __webpack_require__(395);
 	
+	var _regex = __webpack_require__(396);
+	
+	var regex = _interopRequireWildcard(_regex);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	
 	var _defaultProfile = Object.freeze({
 	  general: { firstName: "", lastName: "" },
 	  skills: [],
 	  experience: [],
 	  education: []
 	});
+	
+	// helpers 
+	
+	var getBlocks = function getBlocks(text) {
+	  return text.split("\n\n");
+	};
+	
+	var blockToLines = function blockToLines(block) {
+	  return block.split("\n");
+	};
+	
+	var check = function check(line, reg) {
+	  var matches = line.match(reg);
+	  if (matches !== null) {
+	    return matches[0];
+	  } else {
+	    return null;
+	  }
+	};
+	
+	var handlePri = function handlePri(obj, pri, block) {
+	  if (pri === null) {
+	    return;
+	  }
+	  // console.log(pri);
+	  switch (pri.trim().toUpperCase()) {
+	    case 'SUMMARY':
+	    case 'OBJECTIVE':
+	      obj.general.summary = blockToLines(block).slice(1).join(" ");
+	      return;
+	    case 'SKILLS':
+	    case 'KEY SKILLS':
+	      var skills = blockToLines(block).slice(1).join(",").replace(regex.designator, "").split(",");
+	      obj.skills = skills;
+	      return;
+	    default:
+	      return;
+	  }
+	};
+	
+	var checkName = function checkName(obj, str) {
+	  var matches = str.match(regex.name);
+	  if (matches) {
+	    var arr = matches[1].split(" ");
+	    obj.general.firstName = arr[0];
+	    obj.general.lastName = arr[1];
+	  }
+	};
+	
+	var checkPhone = function checkPhone(obj, str) {
+	  var matches = str.match(regex.phone);
+	  if (matches) {
+	    obj.general.phone = matches[0];
+	  }
+	};
+	
+	var checkEmail = function checkEmail(obj, str) {
+	  var matches = str.match(regex.email);
+	  if (matches) {
+	    obj.general.email = matches[0];
+	  }
+	};
 	
 	exports.default = function () {
 	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _defaultProfile;
@@ -22580,6 +22648,18 @@
 	  var nextState = Object.assign({}, state);
 	  switch (action.type) {
 	    case _ProfileActions.UPDATE_PROFILE:
+	      var resumeText = action.resumeText;
+	
+	      checkName(nextState, resumeText);
+	      checkPhone(nextState, resumeText);
+	      checkEmail(nextState, resumeText);
+	      var blocks = getBlocks(action.resumeText);
+	      for (var i = 0; i < blocks.length; i++) {
+	        var block = blocks[i];
+	        var lines = blockToLines(block);
+	        var pri = check(lines[0], regex.primaryField);
+	        handlePri(nextState, pri, block);
+	      }
 	
 	      return nextState;
 	    case _ProfileActions.CLEAR_PROFILE:
@@ -29378,7 +29458,7 @@
 	    parseResume: function parseResume(resumeText) {
 	      dispatch((0, _ResumeActions.parseResume)(resumeText));
 	      dispatch((0, _ProfileActions.clearProfile)());
-	      dispatch((0, _ProfileActions.updateProfile)());
+	      dispatch((0, _ProfileActions.updateProfile)(resumeText));
 	    }
 	  };
 	};
@@ -29522,7 +29602,7 @@
 	        });
 	      }
 	      this.props.parseResume(this.state.resumeText);
-	      _reactRouter.hashHistory.push("profile");
+	      // hashHistory.push("profile");
 	    }
 	  }, {
 	    key: 'onChange',
@@ -34592,9 +34672,10 @@
 	var UPDATE_PROFILE = exports.UPDATE_PROFILE = 'UPDATE_PROFILE';
 	var CLEAR_PROFILE = exports.CLEAR_PROFILE = 'CLEAR_PROFILE';
 	
-	var updateProfile = exports.updateProfile = function updateProfile() {
+	var updateProfile = exports.updateProfile = function updateProfile(resumeText) {
 	  return {
-	    type: UPDATE_PROFILE
+	    type: UPDATE_PROFILE,
+	    resumeText: resumeText
 	  };
 	};
 	
@@ -34603,6 +34684,22 @@
 	    type: CLEAR_PROFILE
 	  };
 	};
+
+/***/ },
+/* 396 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var name = exports.name = /[nN]ame:\s+(\w+\s\w+)/;
+	var phone = exports.phone = /\(?\d{3}\)?[\s\-]?\d{3}[\s\-]?\d{4}/;
+	var email = exports.email = /\w+\@\w+\.\w+/;
+	var primaryField = exports.primaryField = /^[A-Z\s]+(\s+)?$/;
+	var secondaryField = exports.secondaryField = /[a-zA-Z]+\:/;
+	var designator = exports.designator = /[\w\s]+\:/g;
 
 /***/ }
 /******/ ]);

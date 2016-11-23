@@ -71,7 +71,7 @@ export default class extends React.Component {
       });
     }
     this.props.parseResume(this.state.resumeText);
-    hashHistory.push("profile");
+    // hashHistory.push("profile");
   }
 
   onChange (e) {

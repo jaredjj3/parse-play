@@ -12,7 +12,7 @@ const mapDispatchToProps = dispatch => ({
   parseResume: resumeText => {
     dispatch(parseResume(resumeText));
     dispatch(clearProfile());
-    dispatch(updateProfile());
+    dispatch(updateProfile(resumeText));
   }
 });
 
