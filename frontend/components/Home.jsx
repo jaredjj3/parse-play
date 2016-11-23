@@ -36,7 +36,6 @@ export default () => {
             <p>
               Parse Play was brought to you by:
             </p>
-            <br/>
             <ul className="devicons-list">
               <li><i className="devicons devicon-react-original-wordmark colored"></i></li>
               <li><i className="devicons devicon-javascript-plain colored"></i></li>

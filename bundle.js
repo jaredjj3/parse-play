@@ -32245,7 +32245,6 @@
 	            null,
 	            'Parse Play was brought to you by:'
 	          ),
-	          _react2.default.createElement('br', null),
 	          _react2.default.createElement(
 	            'ul',
 	            { className: 'devicons-list' },
