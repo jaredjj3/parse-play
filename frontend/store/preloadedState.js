@@ -38,7 +38,7 @@ export default {
           to: "August 2015"
         },
         duties: [
-          "Said null one too many times.",
+          "Said null one too many times. Sometimes, you just never know.",
           "Didn't say null enough"
         ]
       },

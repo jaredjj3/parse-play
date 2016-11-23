@@ -241,7 +241,8 @@ article a:hover {
   background: white;
   padding: 10px;
   width: 100%;
-  padding: 15px 30px;
+  padding-left: 30px;
+
 }
 
 /* DEVICONS */
@@ -361,6 +362,7 @@ article h3 {
 
 .experience-item h3 {
   font-weight: bold;
+  max-width: 200px;
 }
 
 .experience-item h4 {
@@ -387,6 +389,7 @@ article h3 {
 
 .experience-item-list > li {
    margin-right: 20px;
+   max-width: 200px;
 }
 
 /* SKILLS */

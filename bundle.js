@@ -22614,7 +22614,7 @@
 	        from: "June 2015",
 	        to: "August 2015"
 	      },
-	      duties: ["Said null one too many times.", "Didn't say null enough"]
+	      duties: ["Said null one too many times. Sometimes, you just never know.", "Didn't say null enough"]
 	    }, {
 	      title: "Null Engineer",
 	      company: "Nulls R' Us.",
