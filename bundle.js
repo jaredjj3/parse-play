@@ -62,7 +62,7 @@
 	
 	var _Root2 = _interopRequireDefault(_Root);
 	
-	var _reactModal = __webpack_require__(284);
+	var _reactModal = __webpack_require__(286);
 	
 	var _reactModal2 = _interopRequireDefault(_reactModal);
 	
@@ -22597,9 +22597,6 @@
 	  value: true
 	});
 	exports.default = {
-	  resume: {
-	    text: null
-	  },
 	  profile: {
 	    general: {
 	      firstName: "Nullson",
@@ -22609,7 +22606,7 @@
 	      phone: "(555) 555 - 5555",
 	      email: "null@null.com"
 	    },
-	    skills: ["defining null", "parsing nulls", "comparing null to undefined"],
+	    skills: ["React", "Redux", "JavaScript", "HTML", "CSS3", "AWS", "Android", "Angular.js", "Backbone.js", "C", "C++", "C#", "Heroku", "jQuery", "Meteor", "Python", "Rails", "Ruby", "Vim"],
 	    experience: [{
 	      title: "Null Engineer",
 	      company: "Null Inc.",
@@ -22618,14 +22615,22 @@
 	        to: "August 2015"
 	      },
 	      duties: ["Said null one too many times.", "Didn't say null enough"]
+	    }, {
+	      title: "Null Engineer",
+	      company: "Nulls R' Us.",
+	      dates: {
+	        from: "June 2015",
+	        to: "August 2015"
+	      },
+	      duties: ["Discovered null", "Invented null", "Made null so much more"]
 	    }],
-	    education: {
+	    education: [{
 	      degree: "BS",
 	      school: "Null University",
-	      GPA: "null",
+	      GPA: "null/null.0",
 	      major: "Null Engineering",
 	      minor: "Null Scientist"
-	    }
+	    }]
 	  }
 	};
 
@@ -22659,7 +22664,7 @@
 	
 	var _UploadContainer2 = _interopRequireDefault(_UploadContainer);
 	
-	var _ProfileContainer = __webpack_require__(282);
+	var _ProfileContainer = __webpack_require__(283);
 	
 	var _ProfileContainer2 = _interopRequireDefault(_ProfileContainer);
 	
@@ -29351,7 +29356,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _sampleResume = __webpack_require__(304);
+	var _sampleResume = __webpack_require__(282);
 	
 	var _sampleResume2 = _interopRequireDefault(_sampleResume);
 	
@@ -29501,6 +29506,17 @@
 
 /***/ },
 /* 282 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = "Name: John Doe \nPhone: (555) 555-5555 \nEmail: johndoe@example.com\n\nOBJECTIVE \nExcel in a web developer career.\n\nKEY SKILLS\nDevelopment: HTML5, JavaScript, Bootstrap, AngularJS, ReactJS, CSS3, Media Queries, Development\nProject Management: JIRA, Bitbucket, Confluence, Git, GitHub\n\nEMPLOYMENT HISTORY\nTitle: Junior Web Developer\nCompany: Apple Inc. \nDates: June 2015 to September 2016\n* Developed responsive corporate websites\n* Did some cool stuff\n* Led team in closing out JIRA bugs\n\nTitle: Web Development Intern \nCompany: Google Inc.\nDates: January 2015 to May 2015\n* Went on coffee runs for the team\n* Team record for longest keg stand\n* Once ate 82 cupcakes during a team building event\n\nEDUCATION\nDegree: BBA \nSchool: Michigan State University\nGPA: 2.2\nMajor: Computer Science\nMinor: Drinking";
+
+/***/ },
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29511,7 +29527,7 @@
 	
 	var _reactRedux = __webpack_require__(205);
 	
-	var _Profile = __webpack_require__(283);
+	var _Profile = __webpack_require__(284);
 	
 	var _Profile2 = _interopRequireDefault(_Profile);
 	
@@ -29530,10 +29546,10 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_Profile2.default);
 
 /***/ },
-/* 283 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -29544,6 +29560,18 @@
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _Experience = __webpack_require__(285);
+	
+	var _Experience2 = _interopRequireDefault(_Experience);
+	
+	var _Education = __webpack_require__(306);
+	
+	var _Education2 = _interopRequireDefault(_Education);
+	
+	var _Skills = __webpack_require__(307);
+	
+	var _Skills2 = _interopRequireDefault(_Skills);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -29563,7 +29591,7 @@
 	  }
 	
 	  _createClass(_class, [{
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
 	      var _props$profile = this.props.profile,
 	          contact = _props$profile.contact,
@@ -29573,101 +29601,104 @@
 	          skills = _props$profile.skills;
 	
 	      return _react2.default.createElement(
-	        "div",
-	        { className: "profile-container" },
-	        _react2.default.createElement("section", { className: "alt-cover-picture-container" }),
+	        'div',
+	        { className: 'profile-container' },
+	        _react2.default.createElement('section', { className: 'alt-cover-picture-container' }),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "articles-container" },
+	          'div',
+	          { className: 'articles-container' },
 	          _react2.default.createElement(
-	            "article",
+	            'article',
 	            null,
 	            _react2.default.createElement(
-	              "div",
-	              { className: "article-left" },
+	              'div',
+	              { className: 'article-left' },
 	              _react2.default.createElement(
-	                "div",
-	                { className: "author-picture-container" },
+	                'div',
+	                { className: 'author-picture-container' },
 	                _react2.default.createElement(
-	                  "a",
-	                  { href: "http://jaredjohnson.me/" },
-	                  _react2.default.createElement("img", { src: "assets/author.jpg", alt: "portfolio" })
+	                  'a',
+	                  { href: 'http://jaredjohnson.me/' },
+	                  _react2.default.createElement('img', { src: 'assets/author.jpg', alt: 'portfolio' })
 	                )
 	              )
 	            ),
 	            _react2.default.createElement(
-	              "div",
-	              { className: "article-right" },
+	              'div',
+	              { className: 'article-right' },
 	              _react2.default.createElement(
-	                "h1",
+	                'h1',
 	                null,
-	                general.firstName + " " + general.lastName
+	                general.firstName + ' ' + general.lastName
 	              ),
 	              _react2.default.createElement(
-	                "h2",
+	                'h2',
 	                null,
 	                general.subtitle
 	              ),
 	              _react2.default.createElement(
-	                "h3",
+	                'h3',
 	                null,
 	                _react2.default.createElement(
-	                  "a",
+	                  'a',
 	                  {
-	                    href: "mailto:" + general.email + "?Subject=Jared%2C%20you%27re%20hired!"
+	                    href: 'mailto:' + general.email + '?Subject=Jared%2C%20you%27re%20hired!'
 	                  },
 	                  general.email
 	                )
 	              ),
 	              _react2.default.createElement(
-	                "h3",
+	                'h3',
 	                null,
 	                general.phone
 	              ),
 	              _react2.default.createElement(
-	                "p",
+	                'p',
 	                null,
 	                general.summary
 	              )
 	            )
 	          ),
 	          _react2.default.createElement(
-	            "article",
+	            'article',
 	            null,
 	            _react2.default.createElement(
-	              "div",
-	              { className: "article-center" },
+	              'div',
+	              { className: 'article-center' },
 	              _react2.default.createElement(
-	                "h1",
+	                'h1',
 	                null,
-	                "Experience"
-	              )
+	                'Experience'
+	              ),
+	              _react2.default.createElement(_Experience2.default, { experience: experience })
 	            )
 	          ),
 	          _react2.default.createElement(
-	            "article",
+	            'article',
 	            null,
 	            _react2.default.createElement(
-	              "div",
-	              { className: "article-center" },
+	              'div',
+	              { className: 'article-center' },
 	              _react2.default.createElement(
-	                "h1",
+	                'h1',
 	                null,
-	                "Education"
-	              )
+	                'Education'
+	              ),
+	              _react2.default.createElement(_Education2.default, { education: education })
 	            )
 	          ),
 	          _react2.default.createElement(
-	            "article",
+	            'article',
 	            null,
 	            _react2.default.createElement(
-	              "div",
-	              { className: "article-center" },
+	              'div',
+	              { className: 'article-center' },
 	              _react2.default.createElement(
-	                "h1",
+	                'h1',
 	                null,
-	                "Links"
-	              )
+	                'Skills'
+	              ),
+	              _react2.default.createElement(_Skills2.default, { skills: skills })
 	            )
 	          )
 	        )
@@ -29681,25 +29712,87 @@
 	exports.default = _class;
 
 /***/ },
-/* 284 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(285);
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (_ref) {
+	  var experience = _ref.experience;
+	
+	  var experienceItems = experience.map(function (exp, i) {
+	    return _react2.default.createElement(
+	      "li",
+	      { key: i + "A" },
+	      _react2.default.createElement(
+	        "div",
+	        { className: "experience-item" },
+	        _react2.default.createElement(
+	          "h2",
+	          null,
+	          exp.title
+	        ),
+	        _react2.default.createElement(
+	          "h3",
+	          null,
+	          exp.company
+	        ),
+	        _react2.default.createElement(
+	          "h4",
+	          null,
+	          exp.dates.from + " to " + exp.dates.to
+	        ),
+	        _react2.default.createElement(
+	          "ul",
+	          { className: "experience-duties" },
+	          exp.duties.map(function (duty, j) {
+	            return _react2.default.createElement(
+	              "li",
+	              { key: j + "B" },
+	              duty
+	            );
+	          })
+	        )
+	      )
+	    );
+	  });
+	  return _react2.default.createElement(
+	    "ul",
+	    { className: "experience-item-list" },
+	    experienceItems
+	  );
+	};
+
+/***/ },
+/* 286 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(287);
 	
 
 
 /***/ },
-/* 285 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(32);
-	var ExecutionEnvironment = __webpack_require__(286);
-	var ModalPortal = React.createFactory(__webpack_require__(287));
-	var ariaAppHider = __webpack_require__(302);
-	var elementClass = __webpack_require__(303);
+	var ExecutionEnvironment = __webpack_require__(288);
+	var ModalPortal = React.createFactory(__webpack_require__(289));
+	var ariaAppHider = __webpack_require__(304);
+	var elementClass = __webpack_require__(305);
 	var renderSubtreeIntoContainer = __webpack_require__(32).unstable_renderSubtreeIntoContainer;
-	var Assign = __webpack_require__(291);
+	var Assign = __webpack_require__(293);
 	
 	var SafeHTMLElement = ExecutionEnvironment.canUseDOM ? window.HTMLElement : {};
 	var AppElement = ExecutionEnvironment.canUseDOM ? document.body : {appendChild: function() {}};
@@ -29810,7 +29903,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 286 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -29855,14 +29948,14 @@
 
 
 /***/ },
-/* 287 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1);
 	var div = React.DOM.div;
-	var focusManager = __webpack_require__(288);
-	var scopeTab = __webpack_require__(290);
-	var Assign = __webpack_require__(291);
+	var focusManager = __webpack_require__(290);
+	var scopeTab = __webpack_require__(292);
+	var Assign = __webpack_require__(293);
 	
 	// so that our CSS is statically analyzable
 	var CLASS_NAMES = {
@@ -30073,10 +30166,10 @@
 
 
 /***/ },
-/* 288 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var findTabbable = __webpack_require__(289);
+	var findTabbable = __webpack_require__(291);
 	var modalElement = null;
 	var focusLaterElement = null;
 	var needToFocus = false;
@@ -30147,7 +30240,7 @@
 
 
 /***/ },
-/* 289 */
+/* 291 */
 /***/ function(module, exports) {
 
 	/*!
@@ -30203,10 +30296,10 @@
 
 
 /***/ },
-/* 290 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var findTabbable = __webpack_require__(289);
+	var findTabbable = __webpack_require__(291);
 	
 	module.exports = function(node, event) {
 	  var tabbable = findTabbable(node);
@@ -30228,7 +30321,7 @@
 
 
 /***/ },
-/* 291 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30239,9 +30332,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseAssign = __webpack_require__(292),
-	    createAssigner = __webpack_require__(298),
-	    keys = __webpack_require__(294);
+	var baseAssign = __webpack_require__(294),
+	    createAssigner = __webpack_require__(300),
+	    keys = __webpack_require__(296);
 	
 	/**
 	 * A specialized version of `_.assign` for customizing assigned values without
@@ -30314,7 +30407,7 @@
 
 
 /***/ },
-/* 292 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30325,8 +30418,8 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseCopy = __webpack_require__(293),
-	    keys = __webpack_require__(294);
+	var baseCopy = __webpack_require__(295),
+	    keys = __webpack_require__(296);
 	
 	/**
 	 * The base implementation of `_.assign` without support for argument juggling,
@@ -30347,7 +30440,7 @@
 
 
 /***/ },
-/* 293 */
+/* 295 */
 /***/ function(module, exports) {
 
 	/**
@@ -30385,7 +30478,7 @@
 
 
 /***/ },
-/* 294 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -30396,9 +30489,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var getNative = __webpack_require__(295),
-	    isArguments = __webpack_require__(296),
-	    isArray = __webpack_require__(297);
+	var getNative = __webpack_require__(297),
+	    isArguments = __webpack_require__(298),
+	    isArray = __webpack_require__(299);
 	
 	/** Used to detect unsigned integer values. */
 	var reIsUint = /^\d+$/;
@@ -30627,7 +30720,7 @@
 
 
 /***/ },
-/* 295 */
+/* 297 */
 /***/ function(module, exports) {
 
 	/**
@@ -30770,7 +30863,7 @@
 
 
 /***/ },
-/* 296 */
+/* 298 */
 /***/ function(module, exports) {
 
 	/**
@@ -31005,7 +31098,7 @@
 
 
 /***/ },
-/* 297 */
+/* 299 */
 /***/ function(module, exports) {
 
 	/**
@@ -31191,7 +31284,7 @@
 
 
 /***/ },
-/* 298 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -31202,9 +31295,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var bindCallback = __webpack_require__(299),
-	    isIterateeCall = __webpack_require__(300),
-	    restParam = __webpack_require__(301);
+	var bindCallback = __webpack_require__(301),
+	    isIterateeCall = __webpack_require__(302),
+	    restParam = __webpack_require__(303);
 	
 	/**
 	 * Creates a function that assigns properties of source object(s) to a given
@@ -31249,7 +31342,7 @@
 
 
 /***/ },
-/* 299 */
+/* 301 */
 /***/ function(module, exports) {
 
 	/**
@@ -31320,7 +31413,7 @@
 
 
 /***/ },
-/* 300 */
+/* 302 */
 /***/ function(module, exports) {
 
 	/**
@@ -31458,7 +31551,7 @@
 
 
 /***/ },
-/* 301 */
+/* 303 */
 /***/ function(module, exports) {
 
 	/**
@@ -31531,7 +31624,7 @@
 
 
 /***/ },
-/* 302 */
+/* 304 */
 /***/ function(module, exports) {
 
 	var _element = typeof document !== 'undefined' ? document.body : null;
@@ -31579,7 +31672,7 @@
 
 
 /***/ },
-/* 303 */
+/* 305 */
 /***/ function(module, exports) {
 
 	module.exports = function(opts) {
@@ -31644,15 +31737,95 @@
 
 
 /***/ },
-/* 304 */
-/***/ function(module, exports) {
+/* 306 */
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-
+	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.default = "Name: John Doe \nPhone: (555) 555-5555 \nEmail: johndoe@example.com\n\nOBJECTIVE \nExcel in a web developer career.\n\nKEY SKILLS\nDevelopment: HTML5, JavaScript, Bootstrap, AngularJS, ReactJS, CSS3, Media Queries, Development\nProject Management: JIRA, Bitbucket, Confluence, Git, GitHub\n\nEMPLOYMENT HISTORY\nTitle: Junior Web Developer\nCompany: Apple Inc. \nDates: June 2015 to September 2016\n* Developed responsive corporate websites\n* Did some cool stuff\n* Led team in closing out JIRA bugs\n\nTitle: Web Development Intern \nCompany: Google Inc.\nDates: January 2015 to May 2015\n* Went on coffee runs for the team\n* Team record for longest keg stand\n* Once ate 82 cupcakes during a team building event\n\nEDUCATION\nDegree: BBA \nSchool: Michigan State University\nGPA: 2.2\nMajor: Computer Science\nMinor: Drinking";
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (_ref) {
+	  var education = _ref.education;
+	
+	  var educationItems = education.map(function (edu, i) {
+	    return _react2.default.createElement(
+	      "li",
+	      { className: "experience-item", key: i },
+	      _react2.default.createElement(
+	        "h2",
+	        null,
+	        edu.degree + " " + edu.major
+	      ),
+	      _react2.default.createElement(
+	        "h3",
+	        null,
+	        edu.school
+	      ),
+	      _react2.default.createElement(
+	        "h4",
+	        null,
+	        "GPA ",
+	        edu.GPA
+	      ),
+	      _react2.default.createElement(
+	        "h4",
+	        null,
+	        "Minor ",
+	        edu.minor
+	      )
+	    );
+	  });
+	  return _react2.default.createElement(
+	    "ul",
+	    null,
+	    educationItems
+	  );
+	};
+
+/***/ },
+/* 307 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (_ref) {
+	  var skills = _ref.skills;
+	
+	  var skillItems = skills.map(function (skill, i) {
+	    return _react2.default.createElement(
+	      "li",
+	      { key: i },
+	      _react2.default.createElement(
+	        "span",
+	        { className: "skill-item" },
+	        skill
+	      )
+	    );
+	  });
+	  return _react2.default.createElement(
+	    "ul",
+	    { className: "skills-list" },
+	    skillItems
+	  );
+	};
 
 /***/ }
 /******/ ]);

@@ -1,5 +1,9 @@
 import React from 'react';
 
+import Experience from './Experience';
+import Education from './Education';
+import Skills from './Skills';
+
 export default class extends React.Component {
 
   render () {
@@ -41,16 +45,19 @@ export default class extends React.Component {
           <article>
             <div className="article-center">
               <h1>Experience</h1>
+              <Experience experience={experience} />
             </div>
           </article>
           <article>
             <div className="article-center">
               <h1>Education</h1>
+              <Education education={education} />
             </div>
           </article>
           <article>
             <div className="article-center">
-              <h1>Links</h1>
+              <h1>Skills</h1>
+              <Skills skills={skills} />
             </div>
           </article>
         </div>

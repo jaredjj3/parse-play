@@ -241,6 +241,7 @@ article a:hover {
   background: white;
   padding: 10px;
   width: 100%;
+  padding: 15px 30px;
 }
 
 /* DEVICONS */
@@ -349,4 +350,65 @@ article a:hover {
 
 article h3 {
   font-size: 14px;
+}
+
+/* EXPERIENCE */
+
+.experience-item h2 {
+  margin-top: 20px;
+  font-style: oblique;
+}
+
+.experience-item h3 {
+  font-weight: bold;
+}
+
+.experience-item h4 {
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+.experience-duties {
+  margin-top: 5px;
+}
+
+.experience-duties li {
+  font-size: 12px;
+  list-style: circle;
+  margin-left: 15px;
+}
+
+.experience-item-list {
+  display: flex;
+  justify-content: flex-start; 
+}
+
+.experience-item-list > li {
+   margin-right: 20px;
+}
+
+/* SKILLS */
+
+.skills-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+}
+
+.skills-list > li { 
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.skill-item {
+  display: inline-flex;
+  background: rgb(25, 80, 190);
+  color: white;
+  padding: 6px 15px;
+}
+
+.skill-item:hover {
+  background: rgb(25, 80, 255);
 }
