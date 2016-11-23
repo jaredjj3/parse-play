@@ -25,7 +25,6 @@ Dates: January 2015 to May 2015
 * Et porta nulla enim et nibh. 
 * Curabitur egestas tortor in cursus condimentum.
 
-
 EDUCATION
 Degree: BS
 School: University of Maryland
