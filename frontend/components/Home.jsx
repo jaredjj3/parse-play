@@ -29,12 +29,14 @@ export default () => {
             <p>
               <b>Project time: ~8 hours</b>
             </p>
+            <a href="http://github.com/jaredjj3/parse-play">Source Code</a>
             <p>
               It's simple: A plaintext resume is copied-and-pasted in the <em><Link to="upload">/upload</Link></em> route. Parse Play will generate a profile based on the plaintext contents. There is no backend component, so state does not persist between each request-response cycle.
             </p>
             <p>
               Parse Play was brought to you by:
             </p>
+            <br/>
             <ul className="devicons-list">
               <li><i className="devicons devicon-react-original-wordmark colored"></i></li>
               <li><i className="devicons devicon-javascript-plain colored"></i></li>
