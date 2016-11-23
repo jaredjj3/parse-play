@@ -27,7 +27,7 @@ export default class extends React.Component {
               </div>
             </div>
             <div className="article-right">
-              <h1>{`${general.firstName} ${general.lastName}`}</h1>
+              <h1>{`${general.firstName} ${general.lastName}`} <i className="material-icons">check_circle</i></h1>
               <h2>{general.subtitle}</h2>
               <h3>
                 <a 

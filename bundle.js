@@ -29629,7 +29629,13 @@
 	              _react2.default.createElement(
 	                'h1',
 	                null,
-	                general.firstName + ' ' + general.lastName
+	                general.firstName + ' ' + general.lastName,
+	                ' ',
+	                _react2.default.createElement(
+	                  'i',
+	                  { className: 'material-icons' },
+	                  'check_circle'
+	                )
 	              ),
 	              _react2.default.createElement(
 	                'h2',
