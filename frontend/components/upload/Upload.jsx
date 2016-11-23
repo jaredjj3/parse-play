@@ -1,5 +1,6 @@
 import React from 'react';
 import sampleResume from '../../util/sampleResume';
+import { hashHistory } from 'react-router';
 
 export default class extends React.Component {
   constructor (props) {
@@ -11,7 +12,7 @@ export default class extends React.Component {
   }
 
   render () {
-    const errors = this.state.errors.map( error => <li>{error}</li>);
+    const errors = this.state.errors.map((error, idx) => <li key={idx}>{error}</li>);
     return(
       <div className="upload-container">
         <div className="resume-container">
@@ -69,8 +70,8 @@ export default class extends React.Component {
         errors: []
       });
     }
-
-
+    this.props.parseResume(this.state.resumeText);
+    hashHistory.push("profile");
   }
 
   onChange (e) {
@@ -82,7 +83,8 @@ export default class extends React.Component {
 
   onResetClick (e) {
     this.setState({
-      resumeText: sampleResume
+      resumeText: sampleResume,
+      errors: []
     });
   }
 

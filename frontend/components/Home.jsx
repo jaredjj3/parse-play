@@ -30,7 +30,7 @@ export default () => {
               <b>Project time: ~8 hours</b>
             </p>
             <p>
-              It's simple: A plaintext resume is copied-and-pasted in the <em><Link to="upload">/upload</Link></em> route. Parse Play will generate an easy-to-update profile based on the plaintext contents. There is no backend component, so state is not persisted between each request-response cycle.
+              It's simple: A plaintext resume is copied-and-pasted in the <em><Link to="upload">/upload</Link></em> route. Parse Play will generate a profile based on the plaintext contents. There is no backend component, so state does not persist between each request-response cycle.
             </p>
             <p>
               Parse Play was brought to you by:
